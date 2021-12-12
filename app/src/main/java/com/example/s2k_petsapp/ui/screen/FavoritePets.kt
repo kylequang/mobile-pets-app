@@ -70,20 +70,23 @@ fun FavoritePets(navController: NavController,petData: PetData){
 fun addToListFavoritePet(petData : PetData){
 
     var pet= FavoritePet(petData.id,petData.name,petData.sex,petData.age, petData.weight, petData.imagePath, petData.category);
-    //FavoritePetData.add(pet);
+
     LazyColumn(){
 
         if(FavoritePetData.size == 0){
             FavoritePetData.add(pet)
         }else{
+            var count=0;
             for (i in 0 until FavoritePetData.size) {
                 if(pet.id === FavoritePetData[i].id)
                 {
                     break;
                 }else{
-                    FavoritePetData.add(pet);
-                    break;
+                   count++;
                 }
+            }
+            if(count===FavoritePetData.size){
+                FavoritePetData.add(pet);
             }
         }
     }
