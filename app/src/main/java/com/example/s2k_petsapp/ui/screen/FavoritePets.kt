@@ -85,7 +85,7 @@ fun addToListFavoritePet(petData : PetData){
                    count++;
                 }
             }
-            if(count===FavoritePetData.size){
+            if(count === FavoritePetData.size){
                 FavoritePetData.add(pet);
             }
         }
